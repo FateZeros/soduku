@@ -6,6 +6,7 @@ import thunk from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 
 import MainReducer from './reducers'
+import './index.scss'
 
 const middleware = [ thunk ]
 if (process.env.NODE_ENV !== 'production') {
@@ -23,16 +24,8 @@ const store = configureStore()
 
 import Game from './pages/game'
 
-class SudoKu extends Component {
-	render() {
-		return (
-			<Game />
-		)
-	}
-}
-
 ReactDOM.render(
 	<Provider store={store}>
-    <SudoKu />  
+		<Game />
   </Provider>,
 document.getElementById('sodu'))
